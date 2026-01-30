@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Space_Grotesk } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { TerminalBackground } from "@/components/ui/TerminalBackground";
 
-const spaceGrotesk = Space_Grotesk({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  variable: "--font-space",
+  variable: "--font-jakarta",
   display: "swap",
 });
 
@@ -14,21 +15,14 @@ export const metadata: Metadata = {
   description: "An AI-native system that constructs architecture, design, flows, and code together.",
 };
 
-import { TerminalBackground } from "@/components/ui/TerminalBackground";
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body
-        className={cn(
-          spaceGrotesk.variable,
-          "min-h-screen bg-background font-sans text-foreground antialiased"
-        )}
-      >
+    <html lang="en" className={cn(jakarta.variable, "dark scroll-smooth")}>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
         <TerminalBackground />
         {children}
       </body>

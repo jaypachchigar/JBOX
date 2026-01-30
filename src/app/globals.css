@@ -6,11 +6,16 @@
   --color-accent: #00FFFF;
   --color-accent-secondary: #FFB000;
   --color-muted: #555555;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --background: #030303;
   --foreground: #E0E0E0;
+}
+
+* {
+  font-family: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 body {
