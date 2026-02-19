@@ -96,7 +96,6 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     <button
-                        onClick={() => window.location.href = '/dashboard'}
                         className="group relative px-8 py-4 bg-black text-white rounded-full font-medium text-lg shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
                     >
                         <span>Initialize JBOX System</span>

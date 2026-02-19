@@ -18,7 +18,6 @@ export function Navbar() {
     const navLinks = [
         { name: "How it works", href: "#how-it-works" },
         { name: "Why JBOX", href: "#why-jbox" },
-        { name: "Pricing", href: "#pricing" },
     ];
 
     return (
@@ -33,14 +32,13 @@ export function Navbar() {
         >
             <div className="max-w-7xl mx-auto px-6 md:px-8 flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                    {/* Logo - Visible on all screens */}
-                    <Link href="/" className="flex items-center gap-2">
+                    {/* Logo - Visible only on mobile/tablet (hidden on desktop lg+) */}
+                    <Link href="/" className="flex items-center gap-2 lg:hidden">
                         <img
                             src="/assets/logo.png"
                             alt="JBOX Logo"
                             className="w-10 h-10 object-contain"
                         />
-                        <span className="text-xl font-bold tracking-tight text-white hidden sm:block">JBOX</span>
                     </Link>
 
                     <nav className="hidden md:flex items-center gap-8 ml-8">
@@ -48,7 +46,7 @@ export function Navbar() {
                             <Link
                                 key={link.name}
                                 href={link.href}
-                                className="text-sm font-medium text-gray-400 hover:text-white transition-colors"
+                                className="text-sm font-medium text-gray-500 hover:text-black transition-colors"
                             >
                                 {link.name}
                             </Link>
@@ -59,14 +57,14 @@ export function Navbar() {
                 <div className="flex items-center gap-4">
                     <Link
                         href="#"
-                        className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-700 bg-white/5 hover:bg-white/10 hover:border-gray-500 transition-all text-sm font-medium text-white shadow-sm"
+                        className="hidden md:flex items-center gap-2 px-5 py-2.5 rounded-full border border-gray-200 bg-white/50 hover:bg-white hover:border-gray-300 transition-all text-sm font-medium text-gray-900 shadow-sm"
                     >
                         Sign in
                     </Link>
 
-                    {/* Mobile Menu Toggle */}
+                    {/* Mobile Menu Toggle - Dark color for visibility on light background */}
                     <button
-                        className="md:hidden text-gray-300 hover:text-white"
+                        className="md:hidden text-gray-700 hover:text-black"
                         onClick={() => setIsMobileOpen(!isMobileOpen)}
                     >
                         {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,13 +78,13 @@ export function Navbar() {
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
-                    className="absolute top-full left-0 right-0 bg-black/95 border-b border-gray-800 p-6 md:hidden flex flex-col gap-4 shadow-2xl"
+                    className="absolute top-full left-0 right-0 bg-white border-b border-gray-200 p-6 md:hidden flex flex-col gap-4 shadow-xl"
                 >
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-base font-medium text-gray-400 hover:text-white transition-colors block py-2"
+                            className="text-base font-medium text-gray-600 hover:text-black transition-colors block py-2"
                             onClick={() => setIsMobileOpen(false)}
                         >
                             {link.name}
@@ -94,7 +92,7 @@ export function Navbar() {
                     ))}
                     <Link
                         href="#"
-                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-gray-700 bg-white/5 hover:bg-white/10 hover:border-gray-500 transition-all text-sm font-medium text-white shadow-sm mt-2"
+                        className="flex items-center justify-center gap-2 px-5 py-3 rounded-full border border-gray-200 bg-gray-50 hover:bg-white hover:border-gray-300 transition-all text-sm font-medium text-gray-900 shadow-sm mt-2"
                         onClick={() => setIsMobileOpen(false)}
                     >
                         Sign in
@@ -104,3 +102,4 @@ export function Navbar() {
         </motion.header>
     );
 }
+
