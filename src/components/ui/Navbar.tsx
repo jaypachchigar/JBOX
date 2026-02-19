@@ -37,7 +37,7 @@ export function Navbar() {
                         <img
                             src="/assets/logo.png"
                             alt="JBOX Logo"
-                            className="w-10 h-10 object-contain"
+                            className="w-14 h-14 md:w-16 md:h-16 object-contain"
                         />
                     </Link>
 
