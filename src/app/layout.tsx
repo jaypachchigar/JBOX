@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import { TerminalBackground } from "@/components/ui/TerminalBackground";
 
 const jakarta = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -21,9 +20,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={cn(jakarta.variable, "dark scroll-smooth")}>
-      <body className="min-h-screen bg-background font-sans text-foreground antialiased">
-        <TerminalBackground />
+    <html lang="en" className={cn(jakarta.variable, "scroll-smooth")} suppressHydrationWarning>
+      <body className="min-h-screen bg-background font-sans text-foreground antialiased selection:bg-accent-blue/30 selection:text-primary">
         {children}
       </body>
     </html>

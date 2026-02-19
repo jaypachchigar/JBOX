@@ -1,20 +1,33 @@
 import { Navbar } from "@/components/ui/Navbar";
 import { Hero } from "@/components/ui/Hero";
-import { ProductExplanation } from "@/components/ui/ProductExplanation";
-import { BuildFlow } from "@/components/ui/BuildFlow";
-import { CoreCapabilities } from "@/components/ui/CoreCapabilities";
-import { IntelligenceLayer } from "@/components/ui/IntelligenceLayer";
+import { ProblemSection } from "@/components/ui/ProblemSection";
+import { SolutionSection } from "@/components/ui/SolutionSection";
+import { HowItWorks } from "@/components/ui/HowItWorks";
+import { ProofSection } from "@/components/ui/ProofSection";
+import { Differentiators } from "@/components/ui/Differentiators";
+import { WhoItIsFor } from "@/components/ui/WhoItIsFor";
+import { CTA } from "@/components/ui/CTA";
 import { Footer } from "@/components/ui/Footer";
 
 export default function Home() {
   return (
-    <main className="flex flex-col min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-accent/30">
+    <main className="min-h-screen bg-white selection:bg-accent-blue/20">
       <Navbar />
       <Hero />
-      <div id="about"><ProductExplanation /></div>
-      <div id="how-it-works"><BuildFlow /></div>
-      <div id="features"><CoreCapabilities /></div>
-      <div id="intelligence"><IntelligenceLayer /></div>
+
+      {/* 
+          NOTE: Hiding marketing sections to match the "Tool-First" unique design request.
+          The focus is entirely on the "Describe your product" input.
+      */}
+
+      <ProblemSection />
+      <SolutionSection />
+      <div id="how-it-works"><HowItWorks /></div>
+      <ProofSection />
+      <div id="why-jbox"><Differentiators /></div>
+      <WhoItIsFor />
+      <CTA />
+
       <Footer />
     </main>
   );
