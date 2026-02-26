@@ -19,59 +19,71 @@ export function Hero() {
             {/* Orbiting System Container */}
             <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center -mt-10">
 
-                {/* Core Engine Visuals */}
-                <div className="relative mb-16 w-64 h-64 flex items-center justify-center">
-                    {/* Orbit Ring 1 */}
+                {/* Visual Graphic Area */}
+                <div className="relative w-full max-w-xl aspect-square flex items-center justify-center mx-auto mt-8 md:mt-12 mb-16">
+                    {/* Orbit Rings (Background) */}
+                    {/* Orbit Ring 1 (Outer) */}
+                    <div className="absolute inset-0 border border-dashed border-gray-100 rounded-full" />
+
+                    {/* Orbit Ring 2 (Middle) */}
                     <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 border border-dashed border-gray-200 rounded-full"
-                    />
-
-                    {/* Orbit Ring 2 (Reverse) */}
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-4 border border-gray-100 rounded-full"
+                        transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-6 md:inset-10 border border-gray-100 rounded-full"
                     />
 
                     {/* Orbit Ring 3 (Inner) */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-8 border border-dashed border-gray-100/50 rounded-full"
+                        className="absolute inset-12 md:inset-20 border border-dashed border-gray-100/50 rounded-full"
                     />
 
                     {/* Orbiting Node 1 - Code (Outer Ring) */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 w-full h-full"
+                        className="absolute inset-0 pointer-events-none"
                     >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-3 w-8 h-8 bg-white border border-gray-100 shadow-sm rounded-xl flex items-center justify-center">
-                            <Code2 size={14} className="text-blue-500" />
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#FAFAFA] border-[3px] border-black rounded-xl flex items-center justify-center pointer-events-auto">
+                            {/* Lego Studs */}
+                            <div className="absolute -top-[7px] left-2 w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="absolute -top-[7px] right-2 w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] rounded-xl flex items-center justify-center">
+                                <Code2 size={20} color="#46d9e1" strokeWidth={2.5} />
+                            </div>
                         </div>
                     </motion.div>
 
                     {/* Orbiting Node 2 - Database (Middle Ring) */}
                     <motion.div
                         animate={{ rotate: -360 }}
-                        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 w-full h-full"
+                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-6 md:inset-10 pointer-events-none"
                     >
-                        <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 w-10 h-10 bg-white border border-gray-100 shadow-sm rounded-xl flex items-center justify-center">
-                            <Database size={16} className="text-violet-500" />
+                        <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 w-10 h-10 bg-[#FAFAFA] border-[3px] border-black rounded-xl flex items-center justify-center pointer-events-auto">
+                            {/* Lego Studs */}
+                            <div className="absolute -top-[7px] left-[5px] w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="absolute -top-[7px] right-[5px] w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] flex items-center justify-center rounded-xl">
+                                <Database size={16} color="#fd6472" strokeWidth={2.5} />
+                            </div>
                         </div>
                     </motion.div>
 
                     {/* Orbiting Node 3 - CPU (Inner Ring) */}
                     <motion.div
                         animate={{ rotate: 360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 w-full h-full"
+                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-12 md:inset-20 pointer-events-none"
                     >
-                        <div className="absolute top-[50%] left-8 -translate-x-1/2 -translate-y-1/2 w-8 h-8 bg-white border border-gray-100 shadow-sm rounded-xl flex items-center justify-center">
-                            <Cpu size={14} className="text-emerald-500" />
+                        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-[#FAFAFA] border-[2px] border-black rounded-lg flex items-center justify-center pointer-events-auto">
+                            {/* Lego Studs */}
+                            <div className="absolute -top-[5px] left-[3px] w-2 h-1.5 bg-[#FAFAFA] border-[2px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="absolute -top-[5px] right-[3px] w-2 h-1.5 bg-[#FAFAFA] border-[2px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
+                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] flex items-center justify-center rounded-lg">
+                                <Cpu size={14} color="#FFBD2E" strokeWidth={2.5} />
+                            </div>
                         </div>
                     </motion.div>
 
@@ -79,7 +91,7 @@ export function Hero() {
                     <motion.div
                         animate={{ scale: [1, 1.05, 1] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="relative w-32 h-32 md:w-40 md:h-40 z-20"
+                        className="relative w-56 h-56 md:w-72 md:h-72 z-20 pointer-events-none"
                     >
                         <img
                             src="/assets/logo.png"
@@ -96,18 +108,12 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     <button
-                        className="group relative px-8 py-4 bg-black text-white rounded-full font-medium text-lg shadow-[0_10px_40px_-10px_rgba(0,0,0,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(0,0,0,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
+                        className="group relative px-8 py-4 bg-[#46d7df] text-black font-semibold rounded-full text-lg shadow-[0_10px_40px_-10px_rgba(70,215,223,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(70,215,223,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
                     >
-                        <span>Initialize JBOX System</span>
-
+                        <span>Activate JBOX</span>
                     </button>
-
-                    <p className="mt-6 text-sm text-gray-400 font-medium">
-                        v2.0 • System Operational
-                    </p>
                 </motion.div>
             </div>
         </section>
     );
-
 }
