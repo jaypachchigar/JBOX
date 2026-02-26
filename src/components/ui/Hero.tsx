@@ -21,84 +21,115 @@ export function Hero() {
 
                 {/* Visual Graphic Area */}
                 <div className="relative w-full max-w-xl aspect-square flex items-center justify-center mx-auto mt-8 md:mt-12 mb-16">
-                    {/* Orbit Rings (Background) */}
-                    {/* Orbit Ring 1 (Outer) */}
-                    <div className="absolute inset-0 border border-dashed border-gray-100 rounded-full" />
 
-                    {/* Orbit Ring 2 (Middle) */}
+                    {/* Glowing Static Halo */}
+                    <div className="absolute inset-0 max-w-[500px] max-h-[500px] m-auto rounded-full bg-[radial-gradient(circle_at_center,_#46d7df_0%,_transparent_70%)] opacity-20 pointer-events-none" />
+                    <div className="absolute inset-0 max-w-[300px] max-h-[300px] m-auto rounded-full bg-[radial-gradient(circle_at_center,_#46d7df_0%,_transparent_60%)] opacity-30 pointer-events-none" />
+
+                    {/* Orbit Ring 1 (Outer - Dashed) */}
+                    <div className="absolute inset-0 border border-dashed border-gray-200/50 rounded-full" />
+
+                    {/* Orbit Ring 2 (Middle - Dotted) */}
+                    <div className="absolute inset-6 md:inset-10 border border-dotted border-gray-300/60 rounded-full" />
+
+                    {/* Orbit Ring 3 (Inner - Solid) */}
+                    <div className="absolute inset-12 md:inset-20 border border-solid border-gray-200/70 rounded-full" />
+
+                    {/* Orbiting Node 1 - Diamond (Outer Ring) */}
+                    <motion.div
+                        animate={{ rotate: 360 }}
+                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-0 pointer-events-none"
+                    >
+                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(-360deg)" }}>
+                            <motion.div
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+                                className="w-12 h-12 bg-white rounded-xl shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-12"
+                            >
+                                {/* Cyan 3D Diamond */}
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L2 10L12 22L22 10L12 2Z" fill="url(#cyan-grad-light)" />
+                                    <path d="M12 2L2 10L12 10Z" fill="url(#cyan-grad-light)" />
+                                    <path d="M12 2L22 10L12 10Z" fill="url(#cyan-grad-mid)" />
+                                    <path d="M2 10L12 22L12 10Z" fill="url(#cyan-grad-mid)" />
+                                    <path d="M22 10L12 22L12 10Z" fill="url(#cyan-grad-dark)" />
+                                    <defs>
+                                        <linearGradient id="cyan-grad-light" x1="12" y1="2" x2="12" y2="10" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#a5f3fc" />
+                                            <stop offset="1" stopColor="#67e8f9" />
+                                        </linearGradient>
+                                        <linearGradient id="cyan-grad-mid" x1="12" y1="2" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#22d3ee" />
+                                            <stop offset="1" stopColor="#06b6d4" />
+                                        </linearGradient>
+                                        <linearGradient id="cyan-grad-dark" x1="12" y1="10" x2="12" y2="22" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#0891b2" />
+                                            <stop offset="1" stopColor="#164e63" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    {/* Orbiting Node 2 - Pink Sphere (Middle Ring) */}
+                    <motion.div
+                        animate={{ rotate: -360 }}
+                        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                        className="absolute inset-6 md:inset-10 pointer-events-none"
+                    >
+                        <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(360deg)" }}>
+                            <motion.div
+                                animate={{ rotate: 360 }}
+                                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
+                                className="w-10 h-10 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center rotate-12"
+                            >
+                                {/* Pink Sphere */}
+                                <div className="w-5 h-5 rounded-full" style={{ background: "radial-gradient(circle at 30% 30%, #fbcfe8, #f43f5e)" }} />
+                            </motion.div>
+                        </div>
+                    </motion.div>
+
+                    {/* Orbiting Node 3 - Green Cylinder (Inner Ring) */}
                     <motion.div
                         animate={{ rotate: 360 }}
                         transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-6 md:inset-10 border border-gray-100 rounded-full"
-                    />
-
-                    {/* Orbit Ring 3 (Inner) */}
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-12 md:inset-20 border border-dashed border-gray-100/50 rounded-full"
-                    />
-
-                    {/* Orbiting Node 1 - Code (Outer Ring) */}
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-0 pointer-events-none"
-                    >
-                        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-[#FAFAFA] border-[3px] border-black rounded-xl flex items-center justify-center pointer-events-auto">
-                            {/* Lego Studs */}
-                            <div className="absolute -top-[7px] left-2 w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="absolute -top-[7px] right-2 w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] rounded-xl flex items-center justify-center">
-                                <Code2 size={20} color="#46d9e1" strokeWidth={2.5} />
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Orbiting Node 2 - Database (Middle Ring) */}
-                    <motion.div
-                        animate={{ rotate: -360 }}
-                        transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                        className="absolute inset-6 md:inset-10 pointer-events-none"
-                    >
-                        <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 w-10 h-10 bg-[#FAFAFA] border-[3px] border-black rounded-xl flex items-center justify-center pointer-events-auto">
-                            {/* Lego Studs */}
-                            <div className="absolute -top-[7px] left-[5px] w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="absolute -top-[7px] right-[5px] w-2 h-2 bg-[#FAFAFA] border-[3px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] flex items-center justify-center rounded-xl">
-                                <Database size={16} color="#fd6472" strokeWidth={2.5} />
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    {/* Orbiting Node 3 - CPU (Inner Ring) */}
-                    <motion.div
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
                         className="absolute inset-12 md:inset-20 pointer-events-none"
                     >
-                        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 w-9 h-9 bg-[#FAFAFA] border-[2px] border-black rounded-lg flex items-center justify-center pointer-events-auto">
-                            {/* Lego Studs */}
-                            <div className="absolute -top-[5px] left-[3px] w-2 h-1.5 bg-[#FAFAFA] border-[2px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="absolute -top-[5px] right-[3px] w-2 h-1.5 bg-[#FAFAFA] border-[2px] border-black border-b-0 rounded-t-[0.2rem] z-0" />
-                            <div className="relative z-10 w-full h-full bg-[#FAFAFA] flex items-center justify-center rounded-lg">
-                                <Cpu size={14} color="#FFBD2E" strokeWidth={2.5} />
-                            </div>
+                        <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(-360deg)" }}>
+                            <motion.div
+                                animate={{ rotate: -360 }}
+                                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+                                className="w-9 h-9 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-6"
+                            >
+                                {/* Green Cylinder */}
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <ellipse cx="12" cy="6" rx="8" ry="4" fill="url(#green-top)" />
+                                    <path d="M4 6V18C4 20.2 7.6 22 12 22C16.4 22 20 20.2 20 18V6H4Z" fill="url(#green-body)" />
+                                    <defs>
+                                        <linearGradient id="green-top" x1="4" y1="6" x2="20" y2="6" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#bbf7d0" />
+                                            <stop offset="1" stopColor="#4ade80" />
+                                        </linearGradient>
+                                        <linearGradient id="green-body" x1="4" y1="14" x2="20" y2="14" gradientUnits="userSpaceOnUse">
+                                            <stop stopColor="#22c55e" />
+                                            <stop offset="1" stopColor="#15803d" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                            </motion.div>
                         </div>
                     </motion.div>
 
-                    {/* Central Logo - Pulsing */}
-                    <motion.div
-                        animate={{ scale: [1, 1.05, 1] }}
-                        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="relative w-56 h-56 md:w-72 md:h-72 z-20 pointer-events-none"
-                    >
+                    {/* Central Logo - Static */}
+                    <div className="relative w-56 h-56 md:w-72 md:h-72 z-20 pointer-events-none">
                         <img
                             src="/assets/logo.png"
                             alt="JBOX"
                             className="w-full h-full object-contain drop-shadow-2xl"
                         />
-                    </motion.div>
+                    </div>
                 </div>
 
                 {/* Main CTA */}
