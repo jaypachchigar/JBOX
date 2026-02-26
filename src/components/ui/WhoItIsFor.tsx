@@ -93,8 +93,8 @@ export function WhoItIsFor() {
                     >
                         <h3 className="text-2xl font-bold mb-2">Ready to Build?</h3>
                         <p className="text-blue-100 mb-6">Start your journey today.</p>
-                        <button className="bg-white text-blue-600 px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors">
-                            Get Started
+                        <button className="bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-blue-50 transition-colors">
+                            Try JBOX
                         </button>
                     </motion.div>
                 </div>

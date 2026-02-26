@@ -141,7 +141,7 @@ export function Hero() {
                     <button
                         className="group relative px-8 py-4 bg-[#46d7df] text-black font-semibold rounded-full text-lg shadow-[0_10px_40px_-10px_rgba(70,215,223,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(70,215,223,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
                     >
-                        <span>Activate JBOX</span>
+                        <span>Try JBOX</span>
                     </button>
                 </motion.div>
             </div>

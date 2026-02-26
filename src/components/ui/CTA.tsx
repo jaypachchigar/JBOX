@@ -24,13 +24,13 @@ export function CTA() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <button className="w-full sm:w-auto px-8 py-4 bg-primary text-white rounded-full text-lg font-bold hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group shadow-xl shadow-primary/20">
-                            Start Building with JBOX
+                        <button className="w-full sm:w-auto px-8 py-4 bg-primary text-black rounded-full text-lg font-bold hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-2 group shadow-xl shadow-primary/20">
+                            Try JBOX
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
                         </button>
 
-                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-gray-800 border border-gray-200 rounded-full text-lg font-bold hover:bg-gray-50 transition-all duration-300 hover:shadow-md">
-                            Book a Demo
+                        <button className="w-full sm:w-auto px-8 py-4 bg-white text-black border border-gray-200 rounded-full text-lg font-bold hover:bg-gray-50 transition-all duration-300 hover:shadow-md">
+                            Try JBOX
                         </button>
                     </div>
                 </motion.div>

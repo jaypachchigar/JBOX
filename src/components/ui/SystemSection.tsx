@@ -39,21 +39,15 @@ export function SystemSection() {
 
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
                         An entire engineering team.<br />
-                        <span
-                            style={{
-                                backgroundImage: 'linear-gradient(to right, #fd6472, #46d9e1)',
-                                WebkitBackgroundClip: 'text',
-                                color: 'transparent'
-                            }}
-                        >
+                        <span style={{ color: '#46d7df' }}>
                             {" "}In a single text box.
                         </span>
                     </h2>
                 </div>
 
-                <div className="w-full h-[50vh] relative z-20">
+                <div className="w-full h-full relative z-20">
                     <img
-                        src="/assets/Screen Recording 2026-02-25 at 9.55.37 PM.gif"
+                        src="/assets/Screen Recording 2026-02-26 at 6.53.04 PM.gif"
                         alt="JBOX Engine compiling and deploying features"
                         className="w-full h-full object-cover"
                     />
@@ -83,13 +77,7 @@ export function SystemSection() {
 
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
                                 An entire engineering team.<br className="hidden md:block" />
-                                <span
-                                    style={{
-                                        backgroundImage: 'linear-gradient(to right, #fd6472, #46d9e1)',
-                                        WebkitBackgroundClip: 'text',
-                                        color: 'transparent'
-                                    }}
-                                >
+                                <span style={{ color: '#46d7df' }}>
                                     {" "}In a single text box.
                                 </span>
                             </h2>

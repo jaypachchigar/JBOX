@@ -52,11 +52,7 @@ export function ThirdSection() {
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0A0A0A] mb-6">
                         Pure Intelligence.<br />
-                        <span style={{
-                            backgroundImage: 'linear-gradient(to right, #fd6472, #46d9e1)',
-                            WebkitBackgroundClip: 'text',
-                            color: 'transparent'
-                        }}>
+                        <span style={{ color: '#f76876' }}>
                             Infinite Scale.
                         </span>
                     </h2>
@@ -67,7 +63,7 @@ export function ThirdSection() {
                     <button
                         className="group relative px-8 py-4 bg-[#46d7df] text-black font-semibold rounded-full text-lg shadow-[0_10px_40px_-10px_rgba(70,215,223,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(70,215,223,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3 mx-auto"
                     >
-                        <span>Activate JBOX</span>
+                        <span>Try JBOX</span>
                     </button>
                 </motion.div>
             </div>
