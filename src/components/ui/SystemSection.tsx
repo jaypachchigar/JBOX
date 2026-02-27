@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
@@ -26,11 +26,11 @@ export function SystemSection() {
     const opacityText = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
     const yText = useTransform(scrollYProgress, [0, 0.3], [0, -50]);
 
-    const [isFullScreen, setIsFullScreen] = useState(false);
+    const targetHeightVh = windowWidth > 0 && typeof window !== "undefined"
+        ? (windowWidth * (1750 / 3558) / window.innerHeight) * 100
+        : 100;
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        setIsFullScreen(latest >= 0.49);
-    });
+    const height = useTransform(scrollYProgress, [0, 0.5], ["100vh", `${isMobile ? 100 : targetHeightVh}vh`]);
 
     if (isMobile) {
         return (
@@ -93,15 +93,16 @@ export function SystemSection() {
 
                 {/* Right GIF Container */}
                 <motion.div
-                    className="relative z-20 overflow-hidden shadow-[-20px_0_50px_-15px_rgba(0,0,0,0.1)] h-full origin-right bg-[#E7E7EA] flex justify-center items-center"
+                    className="relative z-20 overflow-hidden shadow-[-20px_0_50px_-15px_rgba(0,0,0,0.1)] origin-right bg-[#E7E7EA] flex justify-center items-center"
                     style={{
                         width: windowWidth > 0 ? width : "50vw",
+                        height: windowWidth > 0 ? height : "100vh",
                     }}
                 >
                     <img
                         src="/assets/Final_video.gif"
                         alt="JBOX Engine compiling and deploying features"
-                        className={`w-full h-full transition-all duration-500 ease-in-out ${isFullScreen ? 'object-contain' : 'object-cover'}`}
+                        className="w-full h-full object-cover"
                     />
                 </motion.div>
             </div>
