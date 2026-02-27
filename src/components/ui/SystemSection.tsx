@@ -38,10 +38,7 @@ export function SystemSection() {
                 <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
                 <div className="w-full pl-6 pr-6 flex flex-col items-start text-left z-10 mb-8 pt-8">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6">
-                        <Sparkles size={12} color="#fd6472" />
-                        <span className="text-gray-500">The Ultimate Compressor</span>
-                    </div>
+
 
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
                         An entire engineering team.<br />
@@ -76,10 +73,7 @@ export function SystemSection() {
                             className="w-full max-w-[600px] flex flex-col items-start text-left pointer-events-auto pl-8 lg:pl-16 pr-12 lg:pr-24"
                             style={{ opacity: opacityText, y: yText }}
                         >
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] mb-6">
-                                <Sparkles size={12} color="#fd6472" />
-                                <span className="text-gray-500">The Ultimate Compressor</span>
-                            </div>
+
 
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
                                 An entire engineering team.<br className="hidden md:block" />
