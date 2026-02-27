@@ -45,11 +45,11 @@ export function SystemSection() {
                     </h2>
                 </div>
 
-                <div className="w-full h-full relative z-20">
+                <div className="w-full h-full relative z-20 flex justify-center items-center">
                     <img
-                        src="/assets/Screen Recording 2026-02-27 at 08.53.21.gif"
+                        src="/assets/Mobile-video.gif"
                         alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 </div>
             </section>
@@ -87,15 +87,15 @@ export function SystemSection() {
 
                 {/* Right GIF Container */}
                 <motion.div
-                    className="relative z-20 overflow-hidden shadow-[-20px_0_50px_-15px_rgba(0,0,0,0.1)] h-full origin-right bg-black"
+                    className="relative z-20 overflow-hidden shadow-[-20px_0_50px_-15px_rgba(0,0,0,0.1)] h-full origin-right bg-[#E7E7EA] flex justify-center items-center"
                     style={{
                         width: windowWidth > 0 ? width : "50vw",
                     }}
                 >
                     <img
-                        src="/assets/Screen Recording 2026-02-27 at 08.53.21.gif"
+                        src="/assets/Final_video.gif"
                         alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-contain"
                     />
                 </motion.div>
             </div>
