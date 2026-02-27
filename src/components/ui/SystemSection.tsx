@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
@@ -26,6 +26,12 @@ export function SystemSection() {
     const opacityText = useTransform(scrollYProgress, [0, 0.3], [1, 0]);
     const yText = useTransform(scrollYProgress, [0, 0.3], [0, -50]);
 
+    const [isFullScreen, setIsFullScreen] = useState(false);
+
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
+        setIsFullScreen(latest >= 0.49);
+    });
+
     if (isMobile) {
         return (
             <section id="engine" className="relative w-full bg-[#E7E7EA] font-sans flex flex-col pt-16">
@@ -49,7 +55,7 @@ export function SystemSection() {
                     <img
                         src="/assets/Mobile-video.gif"
                         alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-contain"
+                        className="w-full h-full object-cover"
                     />
                 </div>
             </section>
@@ -95,7 +101,7 @@ export function SystemSection() {
                     <img
                         src="/assets/Final_video.gif"
                         alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-contain"
+                        className={`w-full h-full transition-all duration-500 ease-in-out ${isFullScreen ? 'object-contain' : 'object-cover'}`}
                     />
                 </motion.div>
             </div>
