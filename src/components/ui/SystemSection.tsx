@@ -47,7 +47,7 @@ export function SystemSection() {
 
                 <div className="w-full h-full relative z-20">
                     <img
-                        src="/assets/Screen Recording 2026-02-26 at 6.53.04 PM.gif"
+                        src="/assets/Screen Recording 2026-02-27 at 08.53.21.gif"
                         alt="JBOX Engine compiling and deploying features"
                         className="w-full h-full object-cover"
                     />
@@ -93,7 +93,7 @@ export function SystemSection() {
                     }}
                 >
                     <img
-                        src="/assets/Screen Recording 2026-02-25 at 9.55.37 PM.gif"
+                        src="/assets/Screen Recording 2026-02-27 at 08.53.21.gif"
                         alt="JBOX Engine compiling and deploying features"
                         className="w-full h-full object-cover"
                     />

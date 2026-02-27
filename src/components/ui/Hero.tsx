@@ -1,10 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useState } from "react";
 import Link from "next/link";
+import { LeadGenModal } from "./LeadGenModal";
 import { Sparkles, Globe, Cpu, Database, Code2 } from "lucide-react";
 
 export function Hero() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
     return (
 
         <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6 bg-[#FAFAFA]">
@@ -43,9 +47,12 @@ export function Hero() {
                     >
                         <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(-360deg)" }}>
                             <motion.div
-                                animate={{ rotate: -360 }}
-                                transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
-                                className="w-12 h-12 bg-white rounded-xl shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-12"
+                                animate={{ rotate: -360, scale: [1, 0.85, 1] }}
+                                transition={{
+                                    rotate: { duration: 40, repeat: Infinity, ease: "linear" },
+                                    scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut" }
+                                }}
+                                className="orbiting-node-diamond w-12 h-12 bg-white rounded-xl shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-12"
                             >
                                 {/* Cyan 3D Diamond */}
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -81,9 +88,12 @@ export function Hero() {
                     >
                         <div className="absolute bottom-[14.6%] right-[14.6%] translate-x-1/2 translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(360deg)" }}>
                             <motion.div
-                                animate={{ rotate: 360 }}
-                                transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-                                className="w-10 h-10 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center rotate-12"
+                                animate={{ rotate: 360, scale: [1, 0.85, 1] }}
+                                transition={{
+                                    rotate: { duration: 50, repeat: Infinity, ease: "linear" },
+                                    scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.2 }
+                                }}
+                                className="orbiting-node-sphere w-10 h-10 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center rotate-12"
                             >
                                 {/* Pink Sphere */}
                                 <div className="w-5 h-5 rounded-full" style={{ background: "radial-gradient(circle at 30% 30%, #fbcfe8, #f43f5e)" }} />
@@ -99,9 +109,12 @@ export function Hero() {
                     >
                         <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center pointer-events-auto filter drop-shadow-[0_4px_12px_rgba(0,0,0,0.06)]" style={{ transform: "rotate(-360deg)" }}>
                             <motion.div
-                                animate={{ rotate: -360 }}
-                                transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                                className="w-9 h-9 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-6"
+                                animate={{ rotate: -360, scale: [1, 0.85, 1] }}
+                                transition={{
+                                    rotate: { duration: 60, repeat: Infinity, ease: "linear" },
+                                    scale: { duration: 1.5, repeat: Infinity, ease: "easeInOut", delay: 0.4 }
+                                }}
+                                className="orbiting-node-cylinder w-9 h-9 bg-white rounded-lg shadow-[inset_0_-2px_6px_rgba(0,0,0,0.05),_0_2px_8px_rgba(0,0,0,0.04)] border border-gray-50 flex items-center justify-center -rotate-6"
                             >
                                 {/* Green Cylinder */}
                                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -122,14 +135,19 @@ export function Hero() {
                         </div>
                     </motion.div>
 
-                    {/* Central Logo - Static */}
-                    <div className="relative w-56 h-56 md:w-72 md:h-72 z-20 pointer-events-none">
+                    {/* Central Logo - Heartbeat */}
+                    <motion.div
+                        onClick={() => setIsModalOpen(true)}
+                        animate={{ scale: [1, 0.95, 1] }}
+                        transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        className="hero-heartbeat-logo relative w-56 h-56 md:w-72 md:h-72 z-30 cursor-pointer pointer-events-auto"
+                    >
                         <img
                             src="/assets/logo.png"
                             alt="JBOX"
                             className="w-full h-full object-contain drop-shadow-2xl"
                         />
-                    </div>
+                    </motion.div>
                 </div>
 
                 {/* Main CTA */}
@@ -139,12 +157,18 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
                     <button
+                        onClick={() => setIsModalOpen(true)}
                         className="group relative px-8 py-4 bg-[#46d7df] text-black font-semibold rounded-full text-lg shadow-[0_10px_40px_-10px_rgba(70,215,223,0.5)] hover:shadow-[0_20px_60px_-15px_rgba(70,215,223,0.6)] hover:scale-105 active:scale-95 transition-all duration-300 flex items-center gap-3"
                     >
-                        <span>Try JBOX</span>
+                        <span>Try it out</span>
                     </button>
                 </motion.div>
             </div>
+
+            <LeadGenModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+            />
         </section>
     );
 }
