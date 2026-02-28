@@ -41,9 +41,9 @@ export function SystemSection() {
 
 
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
-                        An entire engineering team.<br />
+                        An entire shippable product<br />
                         <span style={{ color: '#46d7df' }}>
-                            {" "}In a single text box.
+                            {" "}in a single text box.
                         </span>
                     </h2>
                 </div>
@@ -76,9 +76,9 @@ export function SystemSection() {
 
 
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
-                                An entire engineering team.<br className="hidden md:block" />
+                                An entire shippable product<br className="hidden md:block" />
                                 <span style={{ color: '#46d7df' }}>
-                                    {" "}In a single text box.
+                                    {" "}in a single text box.
                                 </span>
                             </h2>
                         </motion.div>
