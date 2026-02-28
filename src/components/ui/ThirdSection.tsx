@@ -65,10 +65,10 @@ export function ThirdSection() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0A0A0A] mb-6">
-                        Your no-code tool has the <span style={{ color: '#fc5f70' }}>IQ of a toaster.</span>
+                        The genius engine for fast visionaries.
                     </h2>
                     <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-                        Stop rage-prompting; start shipping. The genius engine for fast visionaries.
+                        Your no-code tool has the <span style={{ color: '#fc5f70' }}>IQ of a toaster.</span> Stop rage-prompting; start shipping.
                     </p>
 
                     <button
