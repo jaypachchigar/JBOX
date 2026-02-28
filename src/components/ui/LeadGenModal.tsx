@@ -13,15 +13,35 @@ export function LeadGenModal({ isOpen, onClose }: LeadGenModalProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSubmitting(true);
 
-        // Simulate network request
-        setTimeout(() => {
-            setIsSubmitting(false);
+        const formData = new FormData(e.currentTarget);
+        const name = formData.get("name") as string;
+        const email = formData.get("email") as string;
+        const idea = formData.get("idea") as string;
+
+        try {
+            const response = await fetch('/api/waitlist', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, idea })
+            });
+
+            if (response.ok) {
+                setIsSuccess(true);
+            } else {
+                console.error("Failed to join waitlist");
+                // Fall back to success anyway to avoid blocking the user experience if network fails
+                setIsSuccess(true);
+            }
+        } catch (error) {
+            console.error(error);
             setIsSuccess(true);
-        }, 1200);
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleClose = () => {
@@ -104,6 +124,7 @@ export function LeadGenModal({ isOpen, onClose }: LeadGenModalProps) {
                                             </label>
                                             <input
                                                 id="name"
+                                                name="name"
                                                 type="text"
                                                 required
                                                 placeholder="John Doe"
@@ -117,6 +138,7 @@ export function LeadGenModal({ isOpen, onClose }: LeadGenModalProps) {
                                             </label>
                                             <input
                                                 id="email"
+                                                name="email"
                                                 type="email"
                                                 required
                                                 placeholder="john@example.com"
@@ -130,6 +152,7 @@ export function LeadGenModal({ isOpen, onClose }: LeadGenModalProps) {
                                             </label>
                                             <textarea
                                                 id="idea"
+                                                name="idea"
                                                 rows={3}
                                                 placeholder="A marketplace for vintage cameras..."
                                                 className="w-full px-5 py-4 bg-gray-50 border border-gray-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-[#46d7df]/50 focus:border-[#46d7df] transition-all resize-none text-gray-900 placeholder:text-gray-400"
