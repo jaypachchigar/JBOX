@@ -64,8 +64,8 @@ export function ThirdSection() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
                 >
-                    <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0A0A0A] mb-4">
-                        Build once. Keep building.
+                    <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-[#0A0A0A] mb-4">
+                        Build once.<br />Keep building.
                     </h2>
                     <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
                         A clean foundation that evolves with you.
