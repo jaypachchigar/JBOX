@@ -7,7 +7,7 @@ import { Footer } from "@/components/ui/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen bg-white selection:bg-accent-blue/20 flex flex-col">
-      <Navbar />
+      {/* <Navbar /> */}
       <Hero />
       <SystemSection />
       <ThirdSection />

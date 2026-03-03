@@ -24,7 +24,7 @@ export function Hero() {
             <div className="relative z-10 w-full max-w-2xl flex flex-col items-center text-center -mt-10">
 
                 {/* Visual Graphic Area */}
-                <div className="relative w-full max-w-xl aspect-square flex items-center justify-center mx-auto mt-8 md:mt-12 mb-16">
+                <div className="relative w-full max-w-md aspect-square flex items-center justify-center mx-auto mt-8 md:mt-12 mb-4">
 
                     {/* Glowing Static Halo */}
                     <div className="absolute inset-0 max-w-[500px] max-h-[500px] m-auto rounded-full bg-[radial-gradient(circle_at_center,_#46d7df_0%,_transparent_70%)] opacity-20 pointer-events-none" />
@@ -140,7 +140,7 @@ export function Hero() {
                         onClick={() => setIsModalOpen(true)}
                         animate={{ scale: [1, 0.95, 1] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="hero-heartbeat-logo relative w-56 h-56 md:w-72 md:h-72 z-30 cursor-pointer pointer-events-auto"
+                        className="hero-heartbeat-logo relative w-44 h-44 md:w-56 md:h-56 z-30 cursor-pointer pointer-events-auto"
                     >
                         <img
                             src="/assets/logo.png"
@@ -149,6 +149,21 @@ export function Hero() {
                         />
                     </motion.div>
                 </div>
+
+                {/* Heading & Sub-heading */}
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.6, delay: 0.1 }}
+                    className="mb-8"
+                >
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                        The next generation<br />product builder.
+                    </h1>
+                    <p className="mt-4 text-lg md:text-xl text-gray-500 font-medium">
+                        For teams shipping real software that lasts from day one
+                    </p>
+                </motion.div>
 
                 {/* Main CTA */}
                 <motion.div

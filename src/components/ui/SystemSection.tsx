@@ -40,12 +40,20 @@ export function SystemSection() {
                 <div className="w-full pl-6 pr-6 flex flex-col items-start text-left z-10 mb-8 pt-8">
 
 
-                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
-                        An entire shippable product<br />
+                    <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-4">
+                        A full product system<br />
                         <span style={{ color: '#46d7df' }}>
-                            {" "}in a single text box.
+                            {" "}from a single prompt.
                         </span>
                     </h2>
+                    <div className="flex flex-wrap gap-3 mb-6">
+                        {["Clean code", "Versioning from day one", "Full context", "Built to evolve"].map((item) => (
+                            <span key={item} className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white/60 border border-gray-200/80 rounded-full px-3 py-1">
+                                <span className="w-1 h-1 rounded-full bg-[#46d7df]" />
+                                {item}
+                            </span>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="w-full h-full relative z-20 flex justify-center items-center">
@@ -75,12 +83,20 @@ export function SystemSection() {
                         >
 
 
-                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-6">
-                                An entire shippable product<br className="hidden md:block" />
+                            <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-4">
+                                A full product system<br className="hidden md:block" />
                                 <span style={{ color: '#46d7df' }}>
-                                    {" "}in a single text box.
+                                    {" "}from a single prompt.
                                 </span>
                             </h2>
+                            <div className="flex flex-wrap gap-3 mb-6">
+                                {["Clean code", "Versioning from day one", "Full context", "Built to evolve"].map((item) => (
+                                    <span key={item} className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 bg-white/60 border border-gray-200/80 rounded-full px-3.5 py-1.5">
+                                        <span className="w-1.5 h-1.5 rounded-full bg-[#46d7df]" />
+                                        {item}
+                                    </span>
+                                ))}
+                            </div>
                         </motion.div>
                     </div>
                 </div>
