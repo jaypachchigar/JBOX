@@ -157,7 +157,7 @@ export function Hero() {
                     transition={{ duration: 0.6, delay: 0.1 }}
                     className="mb-8"
                 >
-                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight leading-tight">
+                    <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-gray-900 tracking-tight leading-tight">
                         The next generation<br />product builder.
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-gray-500 font-medium">

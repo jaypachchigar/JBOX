@@ -67,14 +67,8 @@ export function ThirdSection() {
                     <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-[#0A0A0A] mb-4">
                         Build once. Keep building.
                     </h2>
-                    <div className="flex flex-wrap justify-center gap-3 mb-6">
-                        <span className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 bg-white/60 border border-gray-200/80 rounded-full px-3.5 py-1.5">
-                            <span className="w-1.5 h-1.5 rounded-full bg-[#46d7df]" />
-                            A clean foundation that evolves with you.
-                        </span>
-                    </div>
-                    <p className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-                        Your no-code tool has the <span style={{ color: '#fc5f70' }}>IQ of a toaster.</span> Stop rage-prompting; start shipping.
+                    <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
+                        A clean foundation that evolves with you.
                     </p>
 
                     <button
