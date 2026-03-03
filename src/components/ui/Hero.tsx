@@ -140,7 +140,7 @@ export function Hero() {
                         onClick={() => setIsModalOpen(true)}
                         animate={{ scale: [1, 0.95, 1] }}
                         transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        className="hero-heartbeat-logo relative w-40 h-40 md:w-48 md:h-48 z-30 cursor-pointer pointer-events-auto"
+                        className="hero-heartbeat-logo relative w-44 h-44 md:w-52 md:h-52 z-30 cursor-pointer pointer-events-auto"
                     >
                         <img
                             src="/assets/logo.png"
