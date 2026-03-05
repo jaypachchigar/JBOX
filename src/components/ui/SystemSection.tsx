@@ -5,7 +5,61 @@ import { Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
 
 export function SystemSection() {
+    const [showGif, setShowGif] = useState(false);
+    const [frozenDesktop, setFrozenDesktop] = useState<string | undefined>(undefined);
+    const [frozenMobile, setFrozenMobile] = useState<string | undefined>(undefined);
+    const sectionObserverRef = useRef<HTMLElement>(null);
     const containerRef = useRef<HTMLElement>(null);
+
+    // Capture the first frame of each GIF as a still image
+    useEffect(() => {
+        const captureFirstFrame = (src: string, setter: (url: string) => void) => {
+            const img = new window.Image();
+            img.crossOrigin = "anonymous";
+            img.onload = () => {
+                const canvas = document.createElement("canvas");
+                canvas.width = img.width;
+                canvas.height = img.height;
+                const ctx = canvas.getContext("2d");
+                if (ctx) {
+                    ctx.drawImage(img, 0, 0);
+                    setter(canvas.toDataURL("image/png"));
+                }
+            };
+            img.src = src;
+        };
+        captureFirstFrame("/assets/Final_video.gif", setFrozenDesktop);
+        captureFirstFrame("/assets/Mobile-video.gif", setFrozenMobile);
+    }, []);
+
+    // Start GIF playback 3 seconds after section enters viewport
+    useEffect(() => {
+        const target = sectionObserverRef.current || containerRef.current;
+        if (!target) return;
+
+        let timer: ReturnType<typeof setTimeout> | null = null;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting && !showGif) {
+                    timer = setTimeout(() => {
+                        setShowGif(true);
+                    }, 3000);
+                } else if (!entry.isIntersecting && timer) {
+                    clearTimeout(timer);
+                    timer = null;
+                }
+            },
+            { threshold: 0.2 }
+        );
+
+        observer.observe(target);
+
+        return () => {
+            observer.disconnect();
+            if (timer) clearTimeout(timer);
+        };
+    }, [showGif]);
     const { scrollYProgress } = useScroll({
         target: containerRef,
         offset: ["start start", "end end"]
@@ -34,7 +88,7 @@ export function SystemSection() {
 
     if (isMobile) {
         return (
-            <section id="engine" className="relative w-full bg-[#E7E7EA] font-sans flex flex-col pt-16">
+            <section ref={sectionObserverRef} id="engine" className="relative w-full bg-[#E7E7EA] font-sans flex flex-col pt-16">
                 <div className="absolute inset-0 z-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#000 1px, transparent 1px)', backgroundSize: '32px 32px' }} />
 
                 <div className="w-full pl-6 pr-6 flex flex-col items-start text-left z-10 mb-8 pt-8">
@@ -58,7 +112,7 @@ export function SystemSection() {
 
                 <div className="w-full h-full relative z-20 flex justify-center items-center">
                     <img
-                        src="/assets/Mobile-video.gif"
+                        src={showGif ? "/assets/Mobile-video.gif" : frozenMobile}
                         alt="JBOX Engine compiling and deploying features"
                         className="w-full h-full object-cover"
                     />
@@ -110,7 +164,7 @@ export function SystemSection() {
                     }}
                 >
                     <img
-                        src="/assets/Final_video.gif"
+                        src={showGif ? "/assets/Final_video.gif" : frozenDesktop}
                         alt="JBOX Engine compiling and deploying features"
                         className="w-full h-full object-cover"
                     />
