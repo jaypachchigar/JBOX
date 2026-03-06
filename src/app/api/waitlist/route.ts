@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
         const data = await resend.emails.send({
             from: 'JBOX Waitlist <onboarding@resend.dev>', // Resend default testing sender, must use a verified domain if modifying
-            to: ['go@getjbox.com'], // The user requested to receive emails here
+            to: ['contact@jboxai.com'],
             subject: `New Waitlist Signup: ${name}`,
             html: `
                 <h2>New JBOX Waitlist Signup!</h2>
