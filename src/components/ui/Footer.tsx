@@ -17,7 +17,7 @@ export function Footer() {
                 </div>
 
                 <div className="flex flex-col items-start md:items-end gap-2 text-sm text-gray-400 md:mt-auto">
-                    <a href="mailto:go@getjbox.com" className="hover:text-primary transition-colors">contact@jboxai.com</a>
+                    <a href="mailto:contact@get.jbox.com" className="hover:text-primary transition-colors">contact@get.jbox.com</a>
                     <span>© 2026 JBOX. Built to scale.</span>
                 </div>
             </div>
