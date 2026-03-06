@@ -2,6 +2,7 @@ import { Navbar } from "@/components/ui/Navbar";
 import { Hero } from "@/components/ui/Hero";
 import { SystemSection } from "@/components/ui/SystemSection";
 import { ThirdSection } from "@/components/ui/ThirdSection";
+import { PricingSection } from "@/components/ui/PricingSection";
 import { Footer } from "@/components/ui/Footer";
 
 export default function Home() {
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <SystemSection />
       <ThirdSection />
+      <PricingSection />
       <Footer />
     </main>
   );
