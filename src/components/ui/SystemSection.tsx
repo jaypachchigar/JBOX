@@ -95,13 +95,13 @@ export function SystemSection() {
 
 
                     <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-4">
-                        A full product system<br />
+                        A complete product<br />
                         <span style={{ color: '#46d7df' }}>
                             {" "}from a single prompt.
                         </span>
                     </h2>
                     <div className="flex flex-wrap gap-3 mb-6">
-                        {["Clean code", "Versioning from day one", "Full context", "Built to evolve"].map((item) => (
+                        {["Role flows", "reusable patterns", "tokenised UI", "versioning", "Clean code", "GitHub export"].map((item) => (
                             <span key={item} className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-white/60 border border-gray-200/80 rounded-full px-3 py-1">
                                 <span className="w-1 h-1 rounded-full bg-[#46d7df]" />
                                 {item}
@@ -138,13 +138,13 @@ export function SystemSection() {
 
 
                             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-[#0A0A0A] leading-[1.05] mb-4">
-                                A full product system<br className="hidden md:block" />
+                                A complete product<br className="hidden md:block" />
                                 <span style={{ color: '#46d7df' }}>
                                     {" "}from a single prompt.
                                 </span>
                             </h2>
                             <div className="flex flex-wrap gap-3 mb-6">
-                                {["Clean code", "Versioning from day one", "Full context", "Built to evolve"].map((item) => (
+                                {["Role flows", "reusable patterns", "tokenised UI", "versioning", "Clean code", "GitHub export"].map((item) => (
                                     <span key={item} className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 bg-white/60 border border-gray-200/80 rounded-full px-3.5 py-1.5">
                                         <span className="w-1.5 h-1.5 rounded-full bg-[#46d7df]" />
                                         {item}

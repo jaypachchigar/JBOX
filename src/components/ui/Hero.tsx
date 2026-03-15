@@ -161,7 +161,7 @@ export function Hero() {
                         The next generation<br />product builder.
                     </h1>
                     <p className="mt-4 text-lg md:text-xl text-gray-500 font-medium">
-                        For teams shipping real software that lasts from day one
+                        Real software from day one. No rewrites required.
                     </p>
                 </motion.div>
 

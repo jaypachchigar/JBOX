@@ -68,7 +68,7 @@ export function ThirdSection() {
                         Build once.<br />Keep building.
                     </h2>
                     <p className="text-gray-500 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-10 font-medium">
-                        A clean foundation that evolves with you.
+                        Stays clean as you scale.
                     </p>
 
                     <button
