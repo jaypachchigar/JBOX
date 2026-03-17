@@ -3,6 +3,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Sparkles } from "lucide-react";
 import { useRef, useState, useEffect } from "react";
+import { Blurhash } from "react-blurhash";
 
 export function SystemSection() {
     const [showGif, setShowGif] = useState(false);
@@ -111,11 +112,24 @@ export function SystemSection() {
                 </div>
 
                 <div className="w-full h-full relative z-20 flex justify-center items-center">
-                    <img
-                        src={showGif ? "/assets/Mobile-video.gif" : frozenMobile}
-                        alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-cover"
-                    />
+                    {(showGif || frozenMobile) ? (
+                        <img
+                            src={showGif ? "/assets/Mobile-video.gif" : frozenMobile}
+                            alt="JBOX Engine compiling and deploying features"
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-[#E7E7EA]">
+                            <Blurhash
+                                hash="U9Rp5#_3%h~q-:j[o#j[%NofITWU_4f7M^k9"
+                                width="100%"
+                                height="100%"
+                                resolutionX={32}
+                                resolutionY={32}
+                                punch={1}
+                            />
+                        </div>
+                    )}
                 </div>
             </section>
         );
@@ -163,11 +177,24 @@ export function SystemSection() {
                         height: windowWidth > 0 ? height : "100vh",
                     }}
                 >
-                    <img
-                        src={showGif ? "/assets/Final_video.gif" : frozenDesktop}
-                        alt="JBOX Engine compiling and deploying features"
-                        className="w-full h-full object-cover"
-                    />
+                    {(showGif || frozenDesktop) ? (
+                        <img
+                            src={showGif ? "/assets/Final_video.gif" : frozenDesktop}
+                            alt="JBOX Engine compiling and deploying features"
+                            className="w-full h-full object-cover"
+                        />
+                    ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-[#E7E7EA]">
+                            <Blurhash
+                                hash="UJRfnL-;WX-;_4oMj[ofR+fQoej@~qofWBj["
+                                width="100%"
+                                height="100%"
+                                resolutionX={32}
+                                resolutionY={32}
+                                punch={1}
+                            />
+                        </div>
+                    )}
                 </motion.div>
             </div>
         </section>
